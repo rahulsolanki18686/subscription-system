@@ -80,4 +80,9 @@ public class PackageServiceImpl implements PackageService {
         );
         package1Repository.deleteById(package1Id);
     }
+
+    @Override
+    public Optional<Package> findByName(String name) {
+        return package1Repository.findByName(name);
+    }
 }

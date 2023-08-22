@@ -13,6 +13,7 @@ import lombok.Setter;
 public class PackageDto {
 
     private Long id;
+    private String name;
     private Channel channel;
     private Plan plan;
 }

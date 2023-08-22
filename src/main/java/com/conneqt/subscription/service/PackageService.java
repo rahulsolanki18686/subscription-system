@@ -1,8 +1,10 @@
 package com.conneqt.subscription.service;
 
 import com.conneqt.subscription.dto.PackageDto;
+import com.conneqt.subscription.entity.Package;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PackageService {
 
@@ -14,4 +16,6 @@ public interface PackageService {
     PackageDto updatePackage(PackageDto userDto);
 
     void deletePackage(Long userId);
+
+    Optional<Package> findByName(String name);
 }

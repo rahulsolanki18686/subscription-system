@@ -16,6 +16,8 @@ public class Package {
     @GeneratedValue
     private Long id;
 
+    private String name;
+
     @ManyToOne
  //   @JoinColumn(name = "channel_id")
     private Channel channel;

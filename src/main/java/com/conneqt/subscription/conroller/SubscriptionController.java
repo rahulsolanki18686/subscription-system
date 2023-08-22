@@ -1,7 +1,14 @@
 package com.conneqt.subscription.conroller;
 
+import com.conneqt.subscription.dto.PackageDto;
 import com.conneqt.subscription.dto.SubscriptionDto;
+import com.conneqt.subscription.dto.UserDto;
+import com.conneqt.subscription.entity.Package;
+import com.conneqt.subscription.entity.User;
+import com.conneqt.subscription.mapper.UserMapper;
+import com.conneqt.subscription.service.PackageService;
 import com.conneqt.subscription.service.SubscriptionService;
+import com.conneqt.subscription.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -12,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Tag(
         name = "CRUD Rest APIS for Subscription Desc",
@@ -23,6 +31,9 @@ import java.util.List;
 public class SubscriptionController {
 
     private SubscriptionService subscriptionService;
+    private UserService userService;
+    private PackageService package1Service;
+
 
     @Operation(
             summary = "Create Subscription Rest API",
@@ -36,6 +47,12 @@ public class SubscriptionController {
 
     @PostMapping
     public ResponseEntity<SubscriptionDto> createSubscription(@RequestBody @Valid SubscriptionDto subscriptionDto) {
+
+            Optional<User> user = userService.findByEmail(subscriptionDto.getUser().getEmail());
+        subscriptionDto.setUser(user.get());
+
+        Optional<Package> package1  = package1Service.findByName(subscriptionDto.getPackage1().getName());
+        subscriptionDto.setPackage1(package1.get());
 
         SubscriptionDto savedSubscription = subscriptionService.createSubscription(subscriptionDto);
         return new ResponseEntity<>(savedSubscription, HttpStatus.CREATED);
