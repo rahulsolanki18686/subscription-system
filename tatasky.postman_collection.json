@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "2de3685f-e486-4421-b692-1d4b6ddb8bac",
+		"_postman_id": "7ea4c7ed-0065-405a-a98d-b40353dd0c1b",
 		"name": "tatasky",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14873405"
+		"_exporter_id": "24936280",
+		"_collection_link": "https://tawuniya-api.postman.co/workspace/My-Workspace~dcdefe58-4963-4704-8b4a-165525febb19/collection/24936280-7ea4c7ed-0065-405a-a98d-b40353dd0c1b?action=share&source=collection_link&creator=24936280"
 	},
 	"item": [
 		{
@@ -42,7 +43,39 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"User\":{\r\n            \"id\":\"1\"\r\n        },\r\n        \"Package\":{\r\n            \"id\":\"1\"\r\n\r\n        },\r\n        \"subscriptionDate\":\"\",\r\n        \"expiryDate\":\"\"\r\n        \r\n\r\n}",
+					"raw": "{\r\n        \"user\":{\r\n            \"email\": \"third@gmail.com\"\r\n        },\r\n        \"package1\":{\r\n                    \"name\": \"Family Package\"\r\n\r\n\r\n        },\r\n        \"subscriptionDate\":\"2023-08-22\",\r\n        \"expiryDate\":\"2024-08-22\"\r\n        \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/subscriptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/subscriptions Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"user\":{\r\n            \"email\": \"third@gmail.com\"\r\n        },\r\n        \"package1\":{\r\n                    \"name\": \"Family Package\"\r\n\r\n\r\n        },\r\n        \"subscriptionDate\":\"\",\r\n        \"expiryDate\":\"\"\r\n        \r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
